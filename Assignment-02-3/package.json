@@ -1,0 +1,14 @@
+{
+  "name": "assignment-02-3",
+  "version": "1.0.0",
+  "description": "Non-blocking fibonacci\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "Node"
+  ],
+  "author": "Raymond Jean",
+  "license": "ISC"
+}
