@@ -7,8 +7,6 @@ const PORT = 8080;
 
 app.set('port', PORT);
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
