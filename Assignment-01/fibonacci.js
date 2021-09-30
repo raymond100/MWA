@@ -8,7 +8,7 @@ const fibonacci = (num, memo = {}) => {
         if (num <= 2) return 1;
         // store value in memo
         memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo);
-
+        console.log(num)
         return memo[num];
 
     } catch (error) {
@@ -18,4 +18,5 @@ const fibonacci = (num, memo = {}) => {
 }
 
 console.log(fibonacci(process.argv[2]));
+
 module.exports = fibonacci;

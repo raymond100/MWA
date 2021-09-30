@@ -1,0 +1,19 @@
+{
+  "name": "assignment-03-1",
+  "version": "1.0.0",
+  "description": "Mean games data from json file\"",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node",
+    "express"
+  ],
+  "author": "Raymond Jean",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
