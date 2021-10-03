@@ -34,7 +34,7 @@ const getStudentById = (req, res) => {
             return;
         }
         if (!doc) {
-            res.status(404).json({ error: "404 - Not found", message: "We're sorry, but we don't have a game for this ID." });
+            res.status(404).json({ error: "404 - Not found", message: "We're sorry, but we don't have a student for this ID." });
             return;
         }
         res.status(200).json(doc);
@@ -49,7 +49,7 @@ const addNewStudent = (req, res) => {
         if (err) {
             res.status(400).json(err);
         } else {
-            res.status(200).json(student);
+            res.status(201).json(student);
         }
     });
 }
@@ -62,7 +62,7 @@ const updateStudent = (req, res) => {
             return;
         }
         if (!doc) {
-            res.status(404).json({ error: "404 - Not found", message: "We're sorry, but we don't have a game for this ID." });
+            res.status(404).json({ error: "404 - Not found", message: "We're sorry, but we don't have a student for this ID." });
             return;
         }
         res.status(200).json(doc);
@@ -78,7 +78,7 @@ const deleteStudent = (req, res) => {
             return;
         }
         if (!doc) {
-            res.status(404).json({ error: "404 - Not found", message: "We're sorry, but we don't have a game for this ID." });
+            res.status(404).json({ error: "404 - Not found", message: "We're sorry, but we don't have a student for this ID." });
             return;
         }
         res.status(200).json(doc);
@@ -98,7 +98,7 @@ const getStudentCourses = (req, res) => {
             return;
         }
         if (!doc) {
-            res.status(404).json({ error: "404 - Not found", message: "We're sorry, but we don't have a game for this ID." });
+            res.status(404).json({ error: "404 - Not found", message: "We're sorry, but we don't have a student for this ID." });
             return;
         }
         res.status(200).json(doc);
