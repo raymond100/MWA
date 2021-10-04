@@ -25,7 +25,6 @@ exports.getAllFrameworks = (req, res) => {
     res.status(checked.error.status).json(checked.error);
     return;
   } else {
-    //find datas
     Framework.find()
       .skip(checked.offset)
       .limit(checked.count)
