@@ -21,7 +21,6 @@ module.exports.getGameReview = (req, res) => {
 };
 
 const addReview = (req, res, game) => {
-  //console.log("body ", JSON.parse(req.body));
   if (game.reviews.length > 1) {
     game.reviews.push(req.body);
   } else {
@@ -59,6 +58,12 @@ module.exports.reviewAdd = function (req, res) {
     });
 };
 
+exports.updateReview = async (req, res) => {
+  const game = await reviewRemove(req, res);
+  addReview(req, res, game);
+  console.log("Updated");
+};
+
 deleteReview = (req, res, game) => {
   game.reviews.pull(req.params.reviewId);
   game.save((err, game) => {
@@ -89,6 +94,7 @@ module.exports.reviewRemove = function (req, res) {
         deleteReview(req, res, game);
       } else {
         res.status(response.status).json(response.message);
+        return game;
       }
     });
 };

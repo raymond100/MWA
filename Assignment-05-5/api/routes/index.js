@@ -16,6 +16,7 @@ const {
 const {
   getGameReview,
   reviewAdd,
+  updateReview,
   reviewRemove,
 } = require("../controllers/review.controller");
 
@@ -41,7 +42,7 @@ router.route("/games/:gameId/reviews").get(getGameReview).post(reviewAdd);
 
 router
   .route("/games/:gameId/reviews/:reviewId")
-  .put(reviewAdd)
+  .put(updateReview)
   .delete(reviewRemove);
 
 module.exports = router;
