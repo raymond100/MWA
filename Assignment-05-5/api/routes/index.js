@@ -42,7 +42,7 @@ router.route("/games/:gameId/reviews").get(getGameReview).post(reviewAdd);
 
 router
   .route("/games/:gameId/reviews/:reviewId")
-  .put(updateReview)
+  //.put(updateReview)
   .delete(reviewRemove);
 
 module.exports = router;

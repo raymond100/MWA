@@ -64,7 +64,7 @@ exports.updateReview = async (req, res) => {
   console.log("Updated");
 };
 
-deleteReview = (req, res, game) => {
+const deleteReview = (req, res, game) => {
   game.reviews.pull(req.params.reviewId);
   game.save((err, game) => {
     if (err) {
@@ -74,7 +74,7 @@ deleteReview = (req, res, game) => {
   });
 };
 
-module.exports.reviewRemove = function (req, res) {
+exports.reviewRemove = function (req, res) {
   const gameId = req.params.gameId;
   console.log("Get gameId ", gameId);
   Game.findById(gameId)
@@ -94,7 +94,7 @@ module.exports.reviewRemove = function (req, res) {
         deleteReview(req, res, game);
       } else {
         res.status(response.status).json(response.message);
-        return game;
       }
+      return game;
     });
 };
