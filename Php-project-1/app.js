@@ -1,10 +1,14 @@
+import dotenv from 'dotenv/config';
 import express from 'express';
 import routes from './api/routes/index';
 import './api/data/db';
 
+//config({ path: '.env' });
+
 const app = express();
 
-const PORT = 8000;
+console.log('HMMM', process.env.DB_NAME);
+const PORT = process.env.PORT || 8000;
 
 app.set('port', PORT);
 

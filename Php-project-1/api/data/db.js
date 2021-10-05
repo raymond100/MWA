@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const dbName = 'appDB';
-const uri = `mongodb://localhost:27017/${dbName}`;
+
+const uri = `${process.env.DB_URL}:${process.env.DB_PORT}/${process.env.DB_NAME}`;
 
 mongoose.connect(uri, {
   useNewUrlParser: true,

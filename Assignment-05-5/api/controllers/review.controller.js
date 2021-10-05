@@ -95,6 +95,6 @@ exports.reviewRemove = function (req, res) {
       } else {
         res.status(response.status).json(response.message);
       }
-      return game;
+      //return game;
     });
 };

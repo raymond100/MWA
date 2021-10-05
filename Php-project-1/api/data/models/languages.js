@@ -1,11 +1,20 @@
 import mongoose from 'mongoose';
-import { authorSchema } from './author';
-
 exports.languageSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
   },
 
-  authors: [authorSchema],
+  authors: [
+    {
+      firstname: {
+        type: String,
+        required: true,
+      },
+      lastname: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
 });
