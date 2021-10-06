@@ -1,0 +1,128 @@
+html,
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 100%;
+}
+
+main {
+  min-height: 100%;
+  position: relative;
+}
+
+.rainbow-text {
+  font-weight: bold;
+  font-size: 50px;
+  letter-spacing: 2px;
+  text-shadow: #a3a3a3 3px 3px 1px;
+  margin: 20px;
+  text-align: center;
+}
+.rainbow-text .block-line > span {
+  display: inline-block;
+}
+
+.input-group {
+  width: 50%;
+}
+
+#search {
+  background-color: transparent;
+  border-radius: 20px 20px;
+  font-size: 16px;
+}
+
+#search:hover,
+.card:hover {
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+  border-color: rgba(223, 225, 229, 0);
+}
+
+#button-addon2 {
+  border-radius: 20px 20px;
+  border: none;
+  margin-left: -40px;
+  z-index: 20;
+}
+
+#button-addon2:hover {
+  background-color: transparent;
+  color: #6c757d;
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.wordtype {
+  color: #0645ad;
+  font-size: 0.8em;
+}
+
+.btn:focus,
+.secondary:focus,
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-control:focus {
+  border-color: #6c757d;
+}
+
+/* ****************************************************** */
+/* ******************** footer ************************** */
+/* ****************************************************** */
+
+footer {
+  padding-top: 4%;
+  background-color: #f2f2f2;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer span a {
+  padding: 0.3em 0.7em;
+  color: white;
+  background-color: #70757a;
+  border-radius: 50%;
+  margin: 13px 3px;
+  transition: all 500ms ease;
+}
+
+footer span a:hover {
+  color: #3f494c;
+  background-color: white;
+}
+footer p {
+  margin: 0px;
+  color: #3f494c;
+  font-size: 13px;
+  padding-bottom: 8px;
+}
+
+#word-definition:last-child {
+  padding-bottom: 180px;
+}
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+
+  h1 {
+    font-size: 1.5em;
+  }
+  .input-group {
+    width: 100%;
+  }
+
+  .rainbow-text {
+    font-size: 1.5em;
+  }
+
+  #word-definition:last-child {
+    padding-bottom: 150px;
+  }
+}

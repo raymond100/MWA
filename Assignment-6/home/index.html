@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 mx-auto">
+      <article>
+        <div class="rainbow-text">
+          <span class="block-line"
+            ><span
+              ><span style="color: #ff0000">D</span
+              ><span style="color: #ff9900">i</span
+              ><span style="color: #ccff00">c</span
+              ><span style="color: #33ff00">t</span
+              ><span style="color: #00ff66">i</span
+              ><span style="color: #00ffff">o</span
+              ><span style="color: #0066ff">n</span
+              ><span style="color: #3300ff">a</span
+              ><span style="color: #cc00ff">r</span
+              ><span style="color: #ff0099">y</span></span
+            ></span
+          >
+        </div>
+        <div class="input-wrapper">
+          <div class="input-group mb-3">
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Search word definition"
+              aria-label="Search definition"
+              aria-describedby="button-addon2"
+              name="search-word"
+              id="search"
+              ng-model="searchWord"
+              ng-change="change()"
+              autofocus
+            />
+            <!-- <div class="input-group-append">
+              <button class="btn btn-outline-secondary" id="button-addon2">
+                <i class="fas fa-search"></i>
+              </button>
+            </div> -->
+          </div>
+        </div>
+      </article>
+      <div id="word-definition">
+        <div class="card mb-3" ng-repeat="definition in mainCtrl.definitions">
+          <div class="card-body">
+            <h5 class="card-title">{{ searchWord}}</h5>
+            <p class="card-text">{{ definition.definition }}</p>
+            <p class="card-text" ng-show="definition.example">
+              <em> Example: {{ definition.example }}</em>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="text-center">
+    <h5>Follow Me</h5>
+    <div class="d-flex flex-row justify-content-center">
+      <span>
+        <a href="">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </span>
+      <span>
+        <a href="">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </span>
+      <span>
+        <a href="https://www.linkedin.com/in/raymond-doirin-jean-248a76156/">
+          <i class="fab fa-linkedin-in"></i
+        ></a>
+      </span>
+      <span>
+        <a href="">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </span>
+      <span>
+        <a href="">
+          <i class="fab fa-pinterest-p"></i>
+        </a>
+      </span>
+    </div>
+    <p class="pt-2">Copyright &copy; Raymond Jean | All Rights Reserved.</p>
+  </div>
+</footer>

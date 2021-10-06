@@ -7,7 +7,6 @@ import './api/data/db';
 
 const app = express();
 
-console.log('HMMM', process.env.DB_NAME);
 const PORT = process.env.PORT || 8000;
 
 app.set('port', PORT);
