@@ -14,5 +14,8 @@ function config($routeProvider) {
       templateUrl: "./home/index.html",
       controller: "HomeController",
       controllerAs: "mainCtrl",
+    })
+    .otherwise({
+      redirectTo: "/",
     });
 }

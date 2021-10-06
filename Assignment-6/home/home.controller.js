@@ -3,7 +3,6 @@ angular.module("myTemplateApp").controller("HomeController", HomeController);
 function HomeController($scope, $routeParams, DictionaryFactory) {
   const vm = this;
   const word = $routeParams.word;
-
   $scope.searchWord = "";
 
   $scope.change = function () {
