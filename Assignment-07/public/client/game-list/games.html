@@ -1,0 +1,7 @@
+<div class="list-group mt-3" ng-repeat="game in vm.allGames | orderBy:'title'">
+  <a
+    ng-href="#!/games/{{game._id}}"
+    class="list-group-item list-group-item-action"
+    >{{game.title}}</a
+  >
+</div>

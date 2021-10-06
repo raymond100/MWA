@@ -1,0 +1,22 @@
+{
+  "name": "assignment-05",
+  "version": "1.0.0",
+  "description": "Mean games data from mongo DB using mongoose",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node",
+    "express"
+  ],
+  "author": "Raymond Jean",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.2",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.8"
+  }
+}

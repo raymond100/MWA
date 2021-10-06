@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-header">
+        <h4>{{vm.details.title}} <span ng-repeat="idx in [].constructor(vm.details.rate) track by $index">&#9733</span></h4>
+      </div>
+  <div class="card-body">
+    <p ng-show="vm.details.publisher.name"><strong>Publisher:</strong>{{vm.details.publisher.name}}</p>
+    <p ng-show="vm.details.year" ><strong>Year:</strong>{{vm.details.year}}</p>
+    <p ng-show="vm.details.price"><strong>Price:</strong>{{vm.details.price | currency}}</p>
+    <p ng-show="vm.details.minPlayers"> <strong>Minimum players:</strong>{{vm.details.minPlayers}}</p>
+    <p ng-show="vm.details.maxPlayers"><strong>Maximum players:</strong>{{vm.details.maxPlayers}}</p>
+    <p ng-show="vm.details.age"><strong>Minimum age:</strong> {{vm.details.age}}</p>
+  </div>
+</div>
