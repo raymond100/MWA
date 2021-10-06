@@ -10,7 +10,8 @@ function HomeController($scope, $routeParams, DictionaryFactory) {
   };
 
   if (word != undefined) {
-    vm.definitions = searchWord(DictionaryFactory, word);
+    $scope.searchWord = word;
+    $scope.change();
   }
 }
 
