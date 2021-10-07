@@ -5,16 +5,16 @@ exports.languageSchema = new mongoose.Schema({
     required: true,
   },
 
-  authors: [
-    {
-      firstname: {
-        type: String,
-        required: true,
-      },
-      lastname: {
-        type: String,
-        required: true,
-      },
-    },
-  ],
+  // authors: [
+  //   {
+  //     firstname: {
+  //       type: String,
+  //       required: true,
+  //     },
+  //     lastname: {
+  //       type: String,
+  //       required: true,
+  //     },
+  //   },
+  // ],
 });
