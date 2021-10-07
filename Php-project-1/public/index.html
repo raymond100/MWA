@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="frameworksApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frameworks</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <main class="content">
+      <div class="container">
+        <div class="row mb-5">
+          <h1>Frameworks</h1>
+        </div>
+      </div>
+      <div class="container" ng-view></div>
+    </main>
+    <footer>
+      <div class="text-center">
+        <h5 class="text-black-50 mb-3">Follow Me</h5>
+        <div class="d-flex flex-row justify-content-center">
+          <span>
+            <a href="">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </span>
+          <span>
+            <a href="">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </span>
+          <span>
+            <a href="https://www.linkedin.com/in/raymond-doirin-jean-248a76156/">
+              <i class="fab fa-linkedin-in"></i
+            ></a>
+          </span>
+          <span>
+            <a href="">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </span>
+          <span>
+            <a href="">
+              <i class="fab fa-pinterest-p"></i>
+            </a>
+          </span>
+        </div>
+        <p class="pt-2">Copyright &copy; Raymond Jean | All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+
+  <script src="node_modules/angular/angular.min.js"></script>
+  <script src="node_modules/angular-route/angular-route.min.js"></script>
+  <script src="./client/app.js"></script>
+  <script src="./client/framework-factory/framework-factory.js"></script>
+  <script src="./client/frameworks/frameworks-controller.js"></script>
+  <script src="./client/framework-details/framework-details.controller.js"></script>
+</html>

@@ -1,0 +1,5 @@
+<div class="list-group mt-3" ng-repeat="framework in vm.allFrameworks | orderBy:'app_name'">
+  <a ng-href="#!/frameworks/{{framework._id}}" class="list-group-item list-group-item-action"
+    >{{framework.app_name}}</a
+  >
+</div>

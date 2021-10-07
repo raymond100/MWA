@@ -1,6 +1,7 @@
 import dotenv from 'dotenv/config';
 import express from 'express';
 import routes from './api/routes/index';
+import path from 'path';
 import './api/data/db';
 
 //config({ path: '.env' });
@@ -13,6 +14,9 @@ app.set('port', PORT);
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', routes);
 
