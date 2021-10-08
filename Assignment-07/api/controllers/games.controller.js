@@ -14,6 +14,7 @@ const getAllGames = (req, res) => {
     //find docs
     Game.find()
       .skip(checked.offset)
+      .sort({ _id: -1 })
       .limit(checked.count)
       .exec((err, docs) => {
         if (err) {
@@ -32,12 +33,10 @@ const getOneGame = (req, res) => {
       return;
     }
     if (!doc) {
-      res
-        .status(404)
-        .json({
-          error: "404 - Not found",
-          message: "We're sorry, but we don't have a game for this ID.",
-        });
+      res.status(404).json({
+        error: "404 - Not found",
+        message: "We're sorry, but we don't have a game for this ID.",
+      });
       return;
     }
     res.status(200).json(doc);
@@ -67,12 +66,10 @@ const updateGame = (req, res) => {
         return;
       }
       if (!game) {
-        res
-          .status(404)
-          .json({
-            error: "404 - Not found",
-            message: "We're sorry, but we don't have a game for this ID.",
-          });
+        res.status(404).json({
+          error: "404 - Not found",
+          message: "We're sorry, but we don't have a game for this ID.",
+        });
         return;
       }
       res.status(200).json(game);
@@ -88,12 +85,10 @@ const deleteGame = (req, res) => {
       return;
     }
     if (!doc) {
-      res
-        .status(404)
-        .json({
-          error: "404 - Not found",
-          message: "We're sorry, but we don't have a game for this ID.",
-        });
+      res.status(404).json({
+        error: "404 - Not found",
+        message: "We're sorry, but we don't have a game for this ID.",
+      });
       return;
     }
     res.status(200).json(doc);

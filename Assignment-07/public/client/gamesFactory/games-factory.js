@@ -6,6 +6,9 @@ function gamesFactory($http) {
   function getAllGames() {
     return $http.get("/api/games?count=10").then(complete).catch(failed);
   }
+  function addNewGame(payload) {
+    return $http.post(`/api/games`, payload).then(complete).catch(failed);
+  }
   function getOneGame(gameId) {
     return $http.get(`/api/games/${gameId}`).then(complete).catch(failed);
   }
@@ -37,6 +40,7 @@ function gamesFactory($http) {
   return {
     getAllGames,
     getOneGame,
+    addNewGame,
     deleteGame,
     alertMessage,
     getMessage,

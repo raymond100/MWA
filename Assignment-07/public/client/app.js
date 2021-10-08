@@ -10,6 +10,11 @@ function config($routeProvider) {
       controller: "GamesController",
       controllerAs: "vm",
     })
+    .when("/games/create", {
+      templateUrl: "client/game-create/game-create.html",
+      controller: "GameCreateController",
+      controllerAs: "vm",
+    })
     .when("/games/:gameId", {
       templateUrl: "client/game-details/game-details.html",
       controller: "GameDetailController",
