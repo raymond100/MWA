@@ -12,3 +12,37 @@
     >{{job.title}}</a
   >
 </div>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center my-5">
+    <li class="page-item">
+      <a
+        class="page-link"
+        ng-click="vm.previousPage(vm.currentPage)"
+        aria-label="Previous"
+      >
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" ng-click="vm.setCurrentPage('1')">1</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" ng-click="vm.setCurrentPage('2')">2</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" ng-click="vm.setCurrentPage('3')">3</a>
+    </li>
+    <li class="page-item">
+      <a
+        class="page-link"
+        ng-click="vm.nextPage(vm.currentPage)"
+        aria-label="Next"
+      >
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>

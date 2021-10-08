@@ -10,12 +10,14 @@
           class="btn btn-outline-info"
           ng-href="#!/jobs/update/{{vm.details._id}}"
         >
-          Update
+          <i class="far fa-edit"></i>
+          Edit
         </a>
         <button
           class="btn btn-outline-danger"
           ng-click="vm.deleteJob(vm.details._id)"
         >
+          <i class="fas fa-trash"></i>
           Delete
         </button>
       </div>

@@ -3,8 +3,11 @@ angular.module("jobsApp").factory("JobsFactory", JobsFactory);
 function JobsFactory($http) {
   let messageAlert = "";
 
-  function getAllJobs() {
-    return $http.get("/api/jobs?count=10").then(complete).catch(failed);
+  function getAllJobs(offset, count) {
+    return $http
+      .get(`/api/jobs?offset=${offset}&count=${count}`)
+      .then(complete)
+      .catch(failed);
   }
   function addNewJob(payload) {
     return $http.post(`/api/jobs`, payload).then(complete).catch(failed);
