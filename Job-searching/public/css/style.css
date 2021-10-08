@@ -52,3 +52,7 @@ footer p {
   font-size: 13px;
   padding-bottom: 8px;
 }
+
+.page-link {
+  cursor: pointer;
+}
