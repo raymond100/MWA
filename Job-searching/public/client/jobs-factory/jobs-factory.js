@@ -12,6 +12,14 @@ function JobsFactory($http) {
   function getOneJob(JobsId) {
     return $http.get(`/api/jobs/${JobsId}`).then(complete).catch(failed);
   }
+
+  function updateJob(jobId, payload) {
+    return $http
+      .put(`/api/jobs/${jobId}`, payload)
+      .then(complete)
+      .catch(failed);
+  }
+
   function deleteJob(JobsId) {
     return $http.delete(`/api/jobs/${JobsId}`).then(complete).catch(failed);
   }
@@ -41,6 +49,7 @@ function JobsFactory($http) {
     getAllJobs,
     getOneJob,
     addNewJob,
+    updateJob,
     deleteJob,
     alertMessage,
     getMessage,

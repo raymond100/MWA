@@ -1,4 +1,5 @@
 const { model } = require("mongoose");
+const bcrypt = require("bcrypt");
 
 const Job = model("Job");
 
@@ -45,6 +46,7 @@ const getOneJob = (req, res) => {
 const addNewJob = (req, res) => {
   console.log("add new Job");
   const newJob = new Job(req.body);
+  //newJob.salary = bcrypt.hashSync(req.body.salary.toString(), 10);
   newJob.save((err, Job) => {
     if (err) {
       res.status(500).json(err);

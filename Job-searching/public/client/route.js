@@ -15,6 +15,11 @@ function config($routeProvider) {
       controller: "JobsCreateController",
       controllerAs: "vm",
     })
+    .when("/jobs/update/:jobId", {
+      templateUrl: "client/jobs-update/jobs-update.html",
+      controller: "JobsUpdateController",
+      controllerAs: "vm",
+    })
     .when("/jobs/:jobsId", {
       templateUrl: "client/jobs-details/jobs-details.html",
       controller: "JobsDetailController",

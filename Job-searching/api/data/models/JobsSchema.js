@@ -7,7 +7,7 @@ const JobSchema = mongoose.Schema({
     required: true,
   },
   salary: {
-    type: Number,
+    type: String,
   },
   location: [locationSchema],
 

@@ -6,12 +6,12 @@
     <div class="d-flex justify-content-between">
       <h4>{{vm.details.title}}</h4>
       <div>
-        <button
+        <a
           class="btn btn-outline-info"
-          ng-click="vm.updateJob(vm.details._id)"
+          ng-href="#!/jobs/update/{{vm.details._id}}"
         >
           Update
-        </button>
+        </a>
         <button
           class="btn btn-outline-danger"
           ng-click="vm.deleteJob(vm.details._id)"

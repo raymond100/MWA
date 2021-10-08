@@ -21,10 +21,3 @@ function gameDetailController(GamesFactory, $routeParams, $window) {
     });
   };
 }
-
-// const hideAlert = function (vm) {
-//   setTimeout(() => {
-//     vm.messageErrorAlert = undefined;
-//     document.querySelector(".alert").style.display = "none";
-//   }, 3000);
-// };
