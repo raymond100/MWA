@@ -15,6 +15,10 @@ strong {
   margin-right: 0.5em;
 }
 
+.content {
+  padding-bottom: 10%;
+}
+
 .footer {
   position: absolute;
   bottom: 0;

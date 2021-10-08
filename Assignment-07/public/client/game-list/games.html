@@ -1,3 +1,7 @@
+<div class="alert alert-success" role="alert" ng-show="vm.successMessage">
+  {{ vm.successMessage }}
+</div>
+
 <div class="list-group mt-3" ng-repeat="game in vm.allGames | orderBy:'title'">
   <a
     ng-href="#!/games/{{game._id}}"

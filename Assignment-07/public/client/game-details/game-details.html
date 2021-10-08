@@ -1,8 +1,14 @@
-<div class="card">
+<div class="alert alert-danger" role="alert" ng-show="vm.messageErrorAlert" >
+    {{vm.messageErrorAlert }}
+</div>
+<div class="card" ng-show="vm.details._id">
     <div class="card-header">
-        <h4>{{vm.details.title}} <span ng-repeat="idx in [].constructor(vm.details.rate) track by $index">&#9733</span></h4>
-      </div>
-  <div class="card-body">
+        <div class="d-flex justify-content-between">
+            <h4>{{vm.details.title}} <span ng-repeat="idx in [].constructor(vm.details.rate) track by $index">&#9733</span></h4>
+           <button class="btn btn-outline-danger" ng-click="vm.deleteGame(vm.details._id)">Delete</button>
+        </div>
+    </div>
+      <div class="card-body">
     <p ng-show="vm.details.publisher.name"><strong>Publisher:</strong>{{vm.details.publisher.name}}</p>
     <p ng-show="vm.details.year" ><strong>Year:</strong>{{vm.details.year}}</p>
     <p ng-show="vm.details.price"><strong>Price:</strong>{{vm.details.price | currency}}</p>
