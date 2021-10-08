@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-end">
+  <a class="btn btn-outline-info" ng-href="#!/jobs/create">Add new job</a>
+</div>
+<div class="alert alert-success" role="alert" ng-show="vm.successMessage">
+  {{ vm.successMessage }}
+</div>
+
+<div class="list-group mt-3" ng-repeat="job in vm.allJobs | orderBy:'title'">
+  <a
+    ng-href="#!/jobs/{{job._id}}"
+    class="list-group-item list-group-item-action"
+    >{{job.title}}</a
+  >
+</div>

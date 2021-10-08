@@ -1,0 +1,54 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 90px;
+}
+
+.padded {
+  padding-top: 30px;
+}
+
+strong {
+  margin-right: 0.5em;
+}
+strong {
+  margin-right: 0.5em;
+}
+/* ****************************************************** */
+/* ******************** footer ************************** */
+/* ****************************************************** */
+
+main {
+  padding-bottom: 5%;
+}
+footer {
+  padding-top: 2%;
+  background-color: #f2f2f2;
+  margin: 0;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer span a {
+  padding: 0.3em 0.7em;
+  color: white;
+  background-color: #70757a;
+  border-radius: 50%;
+  margin: 13px 3px;
+  transition: all 500ms ease;
+}
+
+footer span a:hover {
+  color: #3f494c;
+  background-color: white;
+}
+footer p {
+  margin: 0px;
+  color: #3f494c;
+  font-size: 13px;
+  padding-bottom: 8px;
+}

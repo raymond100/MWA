@@ -1,0 +1,45 @@
+<div class="alert alert-danger" role="alert" ng-show="vm.messageErrorAlert">
+  {{vm.messageErrorAlert }}
+</div>
+<div class="card" ng-show="vm.details._id">
+  <div class="card-header">
+    <div class="d-flex justify-content-between">
+      <h4>{{vm.details.title}}</h4>
+      <div>
+        <button
+          class="btn btn-outline-info"
+          ng-click="vm.updateJob(vm.details._id)"
+        >
+          Update
+        </button>
+        <button
+          class="btn btn-outline-danger"
+          ng-click="vm.deleteJob(vm.details._id)"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <p ng-show="vm.details.description">
+      <strong>Job description:</strong>{{vm.details.description}}
+    </p>
+    <p ng-show="vm.details.salary">
+      <strong>Salary:</strong>{{vm.details.salary | currency}}
+    </p>
+    <address ng-show="vm.details.location[0]">
+      <strong>Address:</strong> {{vm.details.location[0].address}}
+    </address>
+    <p ng-show="vm.details.experience">
+      <strong>Experience:</strong>{{vm.details.experience}}
+    </p>
+    <p ng-show="vm.details.skills[0]">
+      <strong>Skills:</strong>
+      <span ng-repeat="skill in vm.details.skills">{{ skill.name }}, </span>
+    </p>
+    <p ng-show="vm.details.postDate">
+      <strong>Post date:</strong> {{vm.details.postDate | date}}
+    </p>
+  </div>
+</div>
