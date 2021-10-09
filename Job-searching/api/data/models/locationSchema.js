@@ -6,13 +6,11 @@ const LocationSchema = mongoose.Schema({
   location: {
     type: {
       type: String, // Don't do `{ location: { type: String } }`
-      enum: ["Point"], // 'location.type' must be 'Point'
-      required: true,
+      //enum: ["Point"], // 'location.type' must be 'Point'
     },
     coordinates: {
       type: [Number],
       index: "2dsphere", // Create a special 2dsphere index on `City.location`
-      required: true,
     },
   },
 });
