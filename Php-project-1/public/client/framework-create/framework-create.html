@@ -1,0 +1,84 @@
+<div class="alert alert-info" role="alert" ng-show="vm.messageErrorAlert">
+  {{vm.messageErrorAlert }}
+</div>
+<div class="card">
+  <div class="card-header">
+    <h4>Create Job</h4>
+  </div>
+  <div class="card-body">
+    <form name="vm.formJob" ng-submit="vm.createJob()">
+      <div class="form-group row mb-3 justify-content-center">
+        <label for="title" class="col-sm-2 col-form-label">Title</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            ng-model="vm.job.title"
+            required
+          />
+        </div>
+      </div>
+      <div class="form-group row mb-3 justify-content-center">
+        <label for="description" class="col-sm-2 col-form-label"
+          >Job Description</label
+        >
+        <div class="col-sm-6">
+          <textarea
+            class="form-control"
+            name="description"
+            id="description"
+            ng-model="vm.job.description"
+            cols="30"
+            required
+          >
+          </textarea>
+        </div>
+      </div>
+      <div class="form-group row mb-3 justify-content-center">
+        <label for="experience" class="col-sm-2 col-form-label"
+          >Experience</label
+        >
+        <div class="col-sm-6">
+          <textarea
+            class="form-control"
+            name="experience"
+            id="experience"
+            ng-model="vm.job.experience"
+            cols="30"
+          >
+          </textarea>
+        </div>
+      </div>
+      <div class="form-group row mb-3 justify-content-center">
+        <label for="salary" class="col-sm-2 col-form-label">Salary</label>
+        <div class="col-sm-6">
+          <input
+            type="number"
+            step="0.01"
+            class="form-control"
+            id="salary"
+            ng-model="vm.job.salary"
+          />
+        </div>
+      </div>
+      <div class="form-group row mb-3 justify-content-center">
+        <label for="date" class="col-sm-2 col-form-label">Post Date</label>
+        <div class="col-sm-6">
+          <input
+            type="date"
+            min="1"
+            max="5"
+            class="form-control"
+            id="date"
+            ng-model="vm.job.postDate"
+            required
+          />
+        </div>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-outline-info">Add Job</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -125,6 +125,46 @@ const validateRequest = (req, count = 6, offset = 0, maxCount = 10) => {
   }
 };
 
+const runGeoQuery = function (req, res) {
+  const lng = parseFloat(req.query.lng);
+
+  const lat = parseFloat(req.query.lat);
+
+  const maxDist = parseFloat(req.query.dist) || 1000;
+
+  console.log("lng", lng, " lat ", lat, " dist ", maxDist);
+
+  const query = {
+    "publisher.location": {
+      $near: {
+        $geometry: {
+          type: "Point",
+
+          coordinates: [lng, lat],
+        },
+
+        $maxDistance: maxDist,
+
+        $minDistance: 10,
+      },
+    },
+  };
+
+  Game.find(query).exec(function (err, games) {
+    console.log("Geo Search");
+
+    if (err) {
+      console.log("Error", err);
+
+      return;
+    }
+
+    console.log("found games");
+
+    res.status(200).json(games);
+  });
+};
+
 module.exports = {
   getAllJobs,
   getOneJob,
