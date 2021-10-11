@@ -8,6 +8,10 @@ function frameworksFactory($http) {
     return $http.get(`/api/frameworks/${frameworkId}`).then(complete).catch(failed);
   }
 
+  function addNewApp(payload) {
+    return $http.post('/api/frameworks', payload).then(complete).catch(failed);
+  }
+
   function complete(response) {
     return response.data;
   }
@@ -15,8 +19,27 @@ function frameworksFactory($http) {
     return error.statusText;
   }
 
+  function alertMessage(message) {
+    messageAlert = message;
+  }
+
+  function getMessage() {
+    return messageAlert;
+  }
+
+  function resetAlert() {
+    setTimeout(() => {
+      document.querySelector('.alert').style.display = 'none';
+      messageAlert = '';
+    }, 2000);
+  }
+
   return {
     getAllFrameworks,
     getOneFramework,
+    addNewApp,
+    alertMessage,
+    getMessage,
+    resetAlert,
   };
 }

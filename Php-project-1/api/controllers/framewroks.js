@@ -7,7 +7,7 @@ const Framework = mongoose.model('Framework');
 exports.createFramework = (req, res) => {
   console.log('add new framework');
   const newFramework = new Framework(req.body);
-  Framework.save(newFramework, (err, data) => {
+  newFramework.save((err, data) => {
     if (err) {
       res.status(500).json(err);
       return;

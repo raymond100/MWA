@@ -2,6 +2,7 @@ import express from 'express';
 import {
   getAllFrameworks,
   getFrameworkById,
+  createFramework,
   updateFramework,
   deleteFramework,
 } from '../controllers/framewroks';
@@ -15,7 +16,7 @@ import {
 
 const router = express.Router();
 
-router.route('/frameworks').get(getAllFrameworks);
+router.route('/frameworks').get(getAllFrameworks).post(createFramework);
 
 router
   .route('/frameworks/:frameworkId')

@@ -3,32 +3,24 @@
 </div>
 <div class="card">
   <div class="card-header">
-    <h4>Create Job</h4>
+    <h4>Add new application</h4>
   </div>
   <div class="card-body">
-    <form name="vm.formJob" ng-submit="vm.createJob()">
+    <form name="vm.formApp" ng-submit="vm.createApp()">
       <div class="form-group row mb-3 justify-content-center">
-        <label for="title" class="col-sm-2 col-form-label">Title</label>
+        <label for="name" class="col-sm-2 col-form-label">Name</label>
         <div class="col-sm-6">
-          <input
-            type="text"
-            class="form-control"
-            id="title"
-            ng-model="vm.job.title"
-            required
-          />
+          <input type="text" class="form-control" id="name" ng-model="vm.app.name" placeholder="Node" required />
         </div>
       </div>
       <div class="form-group row mb-3 justify-content-center">
-        <label for="description" class="col-sm-2 col-form-label"
-          >Job Description</label
-        >
+        <label for="description" class="col-sm-2 col-form-label">Description</label>
         <div class="col-sm-6">
           <textarea
             class="form-control"
             name="description"
             id="description"
-            ng-model="vm.job.description"
+            ng-model="vm.app.description"
             cols="30"
             required
           >
@@ -36,48 +28,116 @@
         </div>
       </div>
       <div class="form-group row mb-3 justify-content-center">
-        <label for="experience" class="col-sm-2 col-form-label"
-          >Experience</label
-        >
+        <label for="authors" class="col-sm-2 col-form-label">Authors</label>
         <div class="col-sm-6">
-          <textarea
+          <input
             class="form-control"
-            name="experience"
-            id="experience"
-            ng-model="vm.job.experience"
+            name="authors"
+            id="authors"
+            ng-model="vm.app.authors"
             cols="30"
           >
-          </textarea>
+        </input>
+        <small id="authorHelp" class="form-text text-muted">Enter multiple author separated by a semi-colon.</small>
         </div>
       </div>
       <div class="form-group row mb-3 justify-content-center">
-        <label for="salary" class="col-sm-2 col-form-label">Salary</label>
+        <label for="developpers" class="col-sm-2 col-form-label">Developpers</label>
         <div class="col-sm-6">
           <input
-            type="number"
-            step="0.01"
             class="form-control"
-            id="salary"
-            ng-model="vm.job.salary"
+            name="developpers"
+            id="developpers"
+            ng-model="vm.app.developpers"
+            cols="30"
+          >
+        </input>
+        <small id="developpersHelp" class="form-text text-muted">Enter multiple developper separated by a semi-colon.</small>
+        </div>
+      </div>
+      <div class="form-group row mb-3 justify-content-center">
+        <label for="initial_release" class="col-sm-2 col-form-label">Initial release</label>
+        <div class="col-sm-6">
+          <input
+            type="date"
+            class="form-control"
+            id="initial_release"
+            ng-model="vm.app.initial_release"
           />
         </div>
       </div>
       <div class="form-group row mb-3 justify-content-center">
-        <label for="date" class="col-sm-2 col-form-label">Post Date</label>
+        <label for="stable_release" class="col-sm-2 col-form-label">Stable release</label>
         <div class="col-sm-6">
           <input
             type="date"
             min="1"
             max="5"
             class="form-control"
-            id="date"
-            ng-model="vm.job.postDate"
-            required
+            id="stable_release"
+            ng-model="vm.app.stable_release"
           />
         </div>
       </div>
+      <div class="form-group row mb-3 justify-content-center">
+        <label for="version" class="col-sm-2 col-form-label">Version</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="version" ng-model="vm.app.version"  />
+        </div>
+      </div>
+      <div class="form-group row mb-3 justify-content-center">
+        <label for="repository" class="col-sm-2 col-form-label">Repository</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="repository" ng-model="vm.app.repository"  />
+        </div>
+      </div>
+      <div class="form-group row mb-3 justify-content-center">
+        <label for="languages" class="col-sm-2 col-form-label">Writen languages</label>
+        <div class="col-sm-6">
+          <input
+            class="form-control"
+            name="languages"
+            id="languages"
+            ng-model="vm.app.languages"
+          >
+        </input>
+        <small id="languagesHelp" class="form-text text-muted">Enter multiple language separated by a semi-colon.</small>
+        </div>
+      </div>
+      <div class="form-group row mb-3 justify-content-center">
+        <label for="os" class="col-sm-2 col-form-label">Operating system</label>
+        <div class="col-sm-6">
+          <input
+            class="form-control"
+            name="os"
+            id="os"
+            ng-model="vm.app.os"
+            
+          >
+        </input>
+        <small id="languagesHelp" class="form-text text-muted">Enter multiple OS separated by a semi-colon.</small>
+        </div>
+      </div>
+      <div class="form-group row mb-3 justify-content-center">
+        <label for="type" class="col-sm-2 col-form-label">Type</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="type" ng-model="vm.app.type"  />
+        </div>
+      </div>
+      <div class="form-group row mb-3 justify-content-center">
+        <label for="licence" class="col-sm-2 col-form-label">Licence</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="licence" ng-model="vm.app.licence"  />
+        </div>
+      </div>
+      <div class="form-group row mb-3 justify-content-center">
+        <label for="website" class="col-sm-2 col-form-label">Website</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="website" ng-model="vm.app.website"  />
+        </div>
+      </div>
       <div class="d-flex justify-content-end">
-        <button type="submit" class="btn btn-outline-info">Add Job</button>
+        <button type="submit" class="btn btn-outline-info">Add App</button>
       </div>
     </form>
   </div>

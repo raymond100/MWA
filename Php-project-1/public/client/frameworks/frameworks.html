@@ -1,3 +1,9 @@
+<div class="d-flex justify-content-end">
+  <a class="btn btn-outline-info" ng-href="#!/frameworks/create">Add application</a>
+</div>
+<div class="alert alert-success" role="alert" ng-show="vm.successMessage">
+  {{ vm.successMessage }}
+</div>
 <div class="list-group mt-3" ng-repeat="framework in vm.allFrameworks | orderBy:'app_name'">
   <a ng-href="#!/frameworks/{{framework._id}}" class="list-group-item list-group-item-action"
     >{{framework.app_name}}</a

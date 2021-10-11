@@ -10,6 +10,11 @@ function config($routeProvider) {
       controller: 'FrameworksController',
       controllerAs: 'vm',
     })
+    .when('/frameworks/create', {
+      templateUrl: 'client/framework-create/framework-create.html',
+      controller: 'FrameworkCreateController',
+      controllerAs: 'vm',
+    })
     .when('/frameworks/:frameworkId', {
       templateUrl: 'client/framework-details/framework-details.html',
       controller: 'FrameworkDetailsController',

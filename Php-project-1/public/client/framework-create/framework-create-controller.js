@@ -1,25 +1,33 @@
 angular.module('frameworksApp').controller('FrameworkCreateController', FrameworkCreateController);
 
-function FrameworkCreateController(FrameworkFactory, $window) {
+function FrameworkCreateController(FrameworksFactory, $window) {
   const vm = this;
 
-  vm.createJob = function () {
-    if (vm.formJob.$dirty && vm.formJob.$valid) {
+  vm.createApp = function () {
+    if (vm.formApp.$dirty && vm.formApp.$valid) {
       const newFramework = {
-        title: vm.job.title,
-        description: vm.job.description,
-        experience: vm.job.experience,
-        salary: vm.job.salary,
-        postDate: vm.job.postDate,
+        app_name: vm.app.name,
+        app_description: vm.app.description,
+        authors: vm.app.authors,
+        developpers: vm.app.developpers,
+        initial_release: vm.app.initial_release,
+        stable_release: vm.app.stable_release,
+        version: vm.app.version,
+        repository: vm.app.repository,
+        languages: vm.app.languages,
+        Os: vm.app.os,
+        type: vm.app.type,
+        licence: vm.app.licence,
+        website: vm.app.website,
       };
-      console.log(newFramework);
+
       FrameworksFactory.addNewApp(newFramework).then((data) => {
         if (!data.status) {
-          FrameworkFactory.alertMessage('App successfuly created!');
+          FrameworksFactory.alertMessage('App successfuly created!');
           $window.location.href = '#!/frameworks';
         } else {
-          console.log(data);
           vm.messageErrorAlert = data.data.message;
+          console.log(vm.messageErrorAlert);
         }
       });
     }
