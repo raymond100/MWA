@@ -1,6 +1,7 @@
 angular.module('frameworksApp').factory('FrameworksFactory', frameworksFactory);
 
 function frameworksFactory($http) {
+  let messageAlert = '';
   function getAllFrameworks() {
     return $http.get('/api/frameworks').then(complete).catch(failed);
   }
@@ -10,6 +11,10 @@ function frameworksFactory($http) {
 
   function addNewApp(payload) {
     return $http.post('/api/frameworks', payload).then(complete).catch(failed);
+  }
+
+  function deleteApp(frameworkId) {
+    return $http.delete(`/api/frameworks/${frameworkId}`).then(complete).catch(failed);
   }
 
   function complete(response) {
@@ -38,6 +43,7 @@ function frameworksFactory($http) {
     getAllFrameworks,
     getOneFramework,
     addNewApp,
+    deleteApp,
     alertMessage,
     getMessage,
     resetAlert,
