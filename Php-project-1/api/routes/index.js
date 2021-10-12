@@ -14,6 +14,8 @@ import {
   getframeworkLanguageById,
 } from '../controllers/languages';
 
+import { login, register, loginRequired } from '../controllers/userControllers';
+
 const router = express.Router();
 
 router.route('/frameworks').get(getAllFrameworks).post(createFramework);
@@ -30,5 +32,11 @@ router
   .get(getframeworkLanguageById)
   .put(languagesAdd)
   .delete(languagesRemove);
+
+// registration route
+router.route('/auth/register').post(register);
+
+// login route
+router.route('/login').post(login);
 
 module.exports = router;

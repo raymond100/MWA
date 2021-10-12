@@ -17,9 +17,16 @@
     <main class="content">
       <div class="container">
         <div class="row mb-5">
-          <h1>
-            <a href="#!/frameworks"> Frameworks</a>
-          </h1>
+          <div class="d-flex justify-content-between">
+            <h1>
+              <a href="#!/frameworks"> Frameworks</a>
+            </h1>
+            <div class="auth">
+              <a href="#!/login">Login</a>
+              <span>/</span>
+              <a href="#!/auth/register">Register</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="container" ng-view></div>
@@ -67,4 +74,5 @@
   <script src="./client/framework-create/framework-create-controller.js"></script>
   <script src="./client/framework-details/framework-details.controller.js"></script>
   <script src="./client/framework-update/framework-update-controller.js"></script>
+  <script src="./client/framework-auth/register-controller.js"></script>
 </html>

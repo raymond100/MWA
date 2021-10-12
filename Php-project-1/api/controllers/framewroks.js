@@ -4,7 +4,7 @@ import { validateRequest } from '../lib/helpers';
 
 const Framework = mongoose.model('Framework');
 
-exports.createFramework = (req, res) => {
+export const createFramework = (req, res) => {
   console.log('add new framework');
   const newFramework = new Framework(req.body);
   newFramework.save((err, data) => {
@@ -17,7 +17,7 @@ exports.createFramework = (req, res) => {
   });
 };
 
-exports.getAllFrameworks = (req, res) => {
+export const getAllFrameworks = (req, res) => {
   // validate request
   const checked = validateRequest(req);
 
@@ -51,7 +51,7 @@ exports.getAllFrameworks = (req, res) => {
   }
 };
 
-exports.getFrameworkById = (req, res) => {
+export const getFrameworkById = (req, res) => {
   Framework.findById(req.params.frameworkId, (err, data) => {
     if (err) {
       res.status(500).json(err);
@@ -68,7 +68,7 @@ exports.getFrameworkById = (req, res) => {
   });
 };
 
-exports.updateFramework = (req, res) => {
+export const updateFramework = (req, res) => {
   console.log('update new framework');
   Framework.findOneAndUpdate(
     { _id: req.params.frameworkId },
@@ -91,7 +91,7 @@ exports.updateFramework = (req, res) => {
   );
 };
 
-exports.deleteFramework = (req, res) => {
+export const deleteFramework = (req, res) => {
   console.log('delete  Framework');
   Framework.findByIdAndDelete(req.params.frameworkId, (err, data) => {
     if (err) {

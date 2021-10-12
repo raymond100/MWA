@@ -7,7 +7,7 @@ function FrameworksController(FrameworksFactory) {
   const appFiltered = 100;
   // TODO: Generate number page auto
   const perPage = 10;
-  vm.currentPage = 0;
+  vm.currentPage = 1;
   vm.searchApp = '';
 
   let offset = perPage * vm.currentPage;
@@ -29,7 +29,7 @@ function FrameworksController(FrameworksFactory) {
   };
 
   vm.previousPage = function (val) {
-    if (vm.currentPage > 0) {
+    if (vm.currentPage > 1) {
       vm.currentPage = parseInt(val) - 1;
       offset = perPage * vm.currentPage;
       callApps(FrameworksFactory, vm, offset, perPage);

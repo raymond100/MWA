@@ -23,6 +23,10 @@ function frameworksFactory($http) {
     return $http.delete(`/api/frameworks/${frameworkId}`).then(complete).catch(failed);
   }
 
+  function userRegister(payload) {
+    return $http.post(`/api/auth/register`, payload).then(complete).catch(failed);
+  }
+
   function complete(response) {
     return response.data;
   }
@@ -51,6 +55,7 @@ function frameworksFactory($http) {
     addNewApp,
     updateApp,
     deleteApp,
+    userRegister,
     alertMessage,
     getMessage,
     resetAlert,

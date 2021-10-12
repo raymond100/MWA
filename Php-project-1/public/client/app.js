@@ -25,6 +25,11 @@ function config($routeProvider) {
       controller: 'FrameworkDetailsController',
       controllerAs: 'vm',
     })
+    .when('/auth/register', {
+      templateUrl: 'client/framework-auth/register.html',
+      controller: 'RegisterController',
+      controllerAs: 'vm',
+    })
     .otherwise({
       redirectTo: '/',
     });
