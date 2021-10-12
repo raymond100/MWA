@@ -25,16 +25,29 @@ exports.getAllFrameworks = (req, res) => {
     res.status(checked.error.status).json(checked.error);
     return;
   } else {
-    Framework.find()
-      .skip(checked.offset)
-      .limit(checked.count)
-      .exec((err, datas) => {
-        if (err) {
-          res.status(500).json(err);
-          return;
-        }
-        res.status(200).json(datas);
-      });
+    if (req.query.search) {
+      Framework.find({ app_name: { $regex: req.query.search, $options: 'i' } })
+        .skip(checked.offset)
+        .limit(checked.count)
+        .exec((err, datas) => {
+          if (err) {
+            res.status(500).json(err);
+            return;
+          }
+          res.status(200).json(datas);
+        });
+    } else {
+      Framework.find()
+        .skip(checked.offset)
+        .limit(checked.count)
+        .exec((err, datas) => {
+          if (err) {
+            res.status(500).json(err);
+            return;
+          }
+          res.status(200).json(datas);
+        });
+    }
   }
 };
 

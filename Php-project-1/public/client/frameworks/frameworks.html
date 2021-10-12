@@ -1,8 +1,29 @@
 <div class="d-flex justify-content-end">
-  <a class="btn btn-outline-info" ng-href="#!/frameworks/create">Add application</a>
+  <a class="btn btn-outline-info mb-3" ng-href="#!/frameworks/create">Add application</a>
 </div>
 <div class="alert alert-success" role="alert" ng-show="vm.successMessage">
   {{ vm.successMessage }}
+</div>
+<div class="input-wrapper">
+  <div class="input-group mb-3">
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Search app"
+      aria-label="Search app"
+      aria-describedby="button-addon2"
+      name="search"
+      id="search"
+      ng-model="vm.searchApp"
+      ng-change="vm.change()"
+      autofocus
+    />
+    <!-- <div class="input-group-append">
+      <button class="btn btn-outline-secondary" id="button-addon2">
+        <i class="fas fa-search"></i>
+      </button>
+    </div> -->
+  </div>
 </div>
 <div class="list-group mt-3" ng-repeat="framework in vm.allFrameworks | orderBy:'app_name'">
   <a ng-href="#!/frameworks/{{framework._id}}" class="list-group-item list-group-item-action"

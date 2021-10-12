@@ -8,6 +8,7 @@ function FrameworksController(FrameworksFactory) {
   // TODO: Generate number page auto
   const perPage = 10;
   vm.currentPage = 0;
+  vm.searchApp = '';
 
   let offset = perPage * vm.currentPage;
 
@@ -35,6 +36,13 @@ function FrameworksController(FrameworksFactory) {
     }
   };
 
+  // Search
+  vm.change = function () {
+    offset = 0;
+    callApps(FrameworksFactory, vm, offset, perPage);
+  };
+
+  // Reset alert
   if (message != '') {
     vm.successMessage = message;
     FrameworksFactory.resetAlert();
@@ -42,7 +50,7 @@ function FrameworksController(FrameworksFactory) {
 }
 
 const callApps = function (factory, ctx, offset, perPage) {
-  factory.getAllFrameworks(offset, perPage).then((response) => {
+  factory.getAllFrameworks(offset, perPage, ctx.searchApp).then((response) => {
     ctx.allFrameworks = response;
   });
 };
