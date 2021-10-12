@@ -2,8 +2,11 @@ angular.module('frameworksApp').factory('FrameworksFactory', frameworksFactory);
 
 function frameworksFactory($http) {
   let messageAlert = '';
-  function getAllFrameworks() {
-    return $http.get('/api/frameworks').then(complete).catch(failed);
+  function getAllFrameworks(offset, count) {
+    return $http
+      .get(`/api/frameworks?offset=${offset}&count=${count}`)
+      .then(complete)
+      .catch(failed);
   }
   function getOneFramework(frameworkId) {
     return $http.get(`/api/frameworks/${frameworkId}`).then(complete).catch(failed);
