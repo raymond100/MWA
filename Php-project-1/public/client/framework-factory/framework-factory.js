@@ -12,6 +12,9 @@ function frameworksFactory($http) {
   function addNewApp(payload) {
     return $http.post('/api/frameworks', payload).then(complete).catch(failed);
   }
+  function updateApp(frameworkId, payload) {
+    return $http.put(`/api/frameworks/${frameworkId}`, payload).then(complete).catch(failed);
+  }
 
   function deleteApp(frameworkId) {
     return $http.delete(`/api/frameworks/${frameworkId}`).then(complete).catch(failed);
@@ -43,6 +46,7 @@ function frameworksFactory($http) {
     getAllFrameworks,
     getOneFramework,
     addNewApp,
+    updateApp,
     deleteApp,
     alertMessage,
     getMessage,

@@ -4,6 +4,8 @@ function FrameworkCreateController(FrameworksFactory, $window) {
   const vm = this;
 
   vm.createApp = function () {
+    // TODO: Split string by semi-colon
+    // TODO: Input check
     if (vm.formApp.$dirty && vm.formApp.$valid) {
       const newFramework = {
         app_name: vm.app.name,
@@ -27,7 +29,6 @@ function FrameworkCreateController(FrameworksFactory, $window) {
           $window.location.href = '#!/frameworks';
         } else {
           vm.messageErrorAlert = data.data.message;
-          console.log(vm.messageErrorAlert);
         }
       });
     }

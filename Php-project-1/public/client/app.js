@@ -15,6 +15,11 @@ function config($routeProvider) {
       controller: 'FrameworkCreateController',
       controllerAs: 'vm',
     })
+    .when('/frameworks/update/:frameworkId', {
+      templateUrl: 'client/framework-update/framework-update.html',
+      controller: 'FrameworkUpdateController',
+      controllerAs: 'vm',
+    })
     .when('/frameworks/:frameworkId', {
       templateUrl: 'client/framework-details/framework-details.html',
       controller: 'FrameworkDetailsController',

@@ -57,7 +57,7 @@ exports.getFrameworkById = (req, res) => {
 
 exports.updateFramework = (req, res) => {
   console.log('update new framework');
-  framework.findOneAndUpdate(
+  Framework.findOneAndUpdate(
     { _id: req.params.frameworkId },
     req.body,
     { new: true, useFindAndModify: false },
