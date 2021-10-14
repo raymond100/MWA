@@ -1,0 +1,14 @@
+<div class="container">
+  <header>
+    <h1>Games List</h1>
+  </header>
+  <div class="row">
+    <div class="list-group mt-3" *ngFor="let game of games">
+      <a
+        routerLink="/games/{{ game._id }}"
+        class="list-group-item list-group-item-action"
+        >{{ game.title }}</a
+      >
+    </div>
+  </div>
+</div>
