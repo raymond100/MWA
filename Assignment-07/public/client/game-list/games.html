@@ -4,7 +4,22 @@
 <div class="alert alert-success" role="alert" ng-show="vm.successMessage">
   {{ vm.successMessage }}
 </div>
-
+<div class="input-wrapper">
+  <div class="input-group mb-3">
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Search game"
+      aria-label="Search game"
+      aria-describedby="button-addon2"
+      name="search"
+      id="search"
+      ng-model="vm.searchGame"
+      ng-change="vm.change()"
+      autofocus
+    />
+  </div>
+</div>
 <div class="list-group mt-3" ng-repeat="game in vm.allGames | orderBy:'title'">
   <a
     ng-href="#!/games/{{game._id}}"
@@ -12,3 +27,36 @@
     >{{game.title}}</a
   >
 </div>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center my-5">
+    <li class="page-item">
+      <a
+        class="page-link"
+        ng-click="vm.previousPage(vm.currentPage)"
+        aria-label="Previous"
+      >
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" ng-click="vm.setCurrentPage('1')">1</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" ng-click="vm.setCurrentPage('2')">2</a>
+    </li>
+    <li class="page-item">
+      <a class="page-link" ng-click="vm.setCurrentPage('3')">3</a>
+    </li>
+    <li class="page-item">
+      <a
+        class="page-link"
+        ng-click="vm.nextPage(vm.currentPage)"
+        aria-label="Next"
+      >
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>

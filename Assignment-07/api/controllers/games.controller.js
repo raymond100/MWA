@@ -11,18 +11,33 @@ const getAllGames = (req, res) => {
     res.status(checked.error.status).json(checked.error);
     return;
   } else {
-    //find docs
-    Game.find()
-      .skip(checked.offset)
-      .sort({ _id: -1 })
-      .limit(checked.count)
-      .exec((err, docs) => {
-        if (err) {
-          res.status(500).json(err);
-          return;
-        }
-        res.status(200).json(docs);
-      });
+    if (req.query.search) {
+      //search docs
+      Game.find({ title: { $regex: req.query.search, $options: "i" } })
+        .skip(checked.offset)
+        .sort({ _id: -1 })
+        .limit(checked.count)
+        .exec((err, docs) => {
+          if (err) {
+            res.status(500).json(err);
+            return;
+          }
+          res.status(200).json(docs);
+        });
+    } else {
+      //find docs
+      Game.find()
+        .skip(checked.offset)
+        .sort({ _id: -1 })
+        .limit(checked.count)
+        .exec((err, docs) => {
+          if (err) {
+            res.status(500).json(err);
+            return;
+          }
+          res.status(200).json(docs);
+        });
+    }
   }
 };
 

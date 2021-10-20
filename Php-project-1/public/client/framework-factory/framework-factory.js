@@ -16,6 +16,7 @@ function frameworksFactory($http) {
     return $http.post('/api/frameworks', payload).then(complete).catch(failed);
   }
   function updateApp(frameworkId, payload) {
+    console.log(payload);
     return $http.put(`/api/frameworks/${frameworkId}`, payload).then(complete).catch(failed);
   }
 

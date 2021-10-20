@@ -1,7 +1,7 @@
-const { Schema } = require('mongoose');
+const { Schema } = require("mongoose");
 
 exports.designerSchema = new Schema({
-    name: {
-        type: String
-    }
-})
+  name: {
+    type: String,
+  },
+});

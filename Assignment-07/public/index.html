@@ -13,7 +13,16 @@
     <main class="content">
       <div class="container">
         <div class="row mb-5">
-          <h1>MEAN Games</h1>
+          <div class="d-flex justify-content-between">
+            <h1>
+              <a href="#!/games"> MEAN Games</a>
+            </h1>
+            <div class="auth">
+              <a href="#!/login">Login</a>
+              <span>/</span>
+              <a href="#!/auth/register">Register</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="container" ng-view></div>
@@ -45,4 +54,6 @@
   <script src="./client/game-list/games-list-controller.js"></script>
   <script src="./client/game-details/game-deatails-controller.js"></script>
   <script src="./client/game-create/game-create-controller.js"></script>
+  <script src="./client/game-update/game-update-controller.js"></script>
+  <script src="./client/games-register/register-controller.js"></script>
 </html>

@@ -9,6 +9,12 @@ const {
 } = require("../controllers/games.controller");
 
 const {
+  login,
+  register,
+  loginRequired,
+} = require("../controllers/userControllers");
+
+const {
   getGamePublisher,
   publisherAdd,
   publisherRemove,
@@ -44,5 +50,11 @@ router
   .route("/games/:gameId/reviews/:reviewId")
   //.put(updateReview)
   .delete(reviewRemove);
+
+// registration route
+router.route("/auth/register").post(register);
+
+// login route
+router.route("/login").post(login);
 
 module.exports = router;

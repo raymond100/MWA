@@ -1,0 +1,51 @@
+<div class="alert alert-info" role="alert" ng-show="vm.messageErrorAlert">
+  {{vm.messageErrorAlert }}
+</div>
+<div class="card">
+  <div class="card-header">
+    <h4>Update Game</h4>
+  </div>
+  <div class="card-body">
+    <form name="vm.formGame" ng-submit="vm.updateGame()">
+      <div class="form-group row mb-3 justify-content-center">
+        <label for="title" class="col-sm-2 col-form-label">Title</label>
+        <div class="col-sm-6">
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            ng-model="vm.game.title"
+          />
+        </div>
+      </div>
+      <div class="form-group row mb-3 justify-content-center">
+        <label for="price" class="col-sm-2 col-form-label">Price</label>
+        <div class="col-sm-6">
+          <input
+            type="number"
+            step="0.01"
+            class="form-control"
+            id="price"
+            ng-model="vm.game.price"
+          />
+        </div>
+      </div>
+      <div class="form-group row mb-3 justify-content-center">
+        <label for="rate" class="col-sm-2 col-form-label">Rate</label>
+        <div class="col-sm-6">
+          <input
+            type="number"
+            min="1"
+            max="5"
+            class="form-control"
+            id="rate"
+            ng-model="vm.game.rate"
+          />
+        </div>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-outline-success">Edit Game</button>
+      </div>
+    </form>
+  </div>
+</div>
