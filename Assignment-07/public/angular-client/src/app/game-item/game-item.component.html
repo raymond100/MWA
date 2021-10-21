@@ -2,7 +2,7 @@
   <!-- <div class="alert alert-danger" role="alert" ng-show="vm.messageErrorAlert" >
     {{vm.messageErrorAlert }}
 </div> -->
-  <div class="card" [hidden]="game == null ? true : false">
+  <div class="card" *ngIf="game">
     <div class="card-header">
       <div class="d-flex justify-content-between">
         <h4>
@@ -10,7 +10,10 @@
           <!-- <span *ngFor="let idx of [].constructor(game.rate) track by $index">&#9733</span> -->
         </h4>
         <div>
-          <a class="btn btn-outline-info" routerLink="/games/update/game._id">
+          <a
+            class="btn btn-outline-info"
+            routerLink="/games/update/{{ game._id }}"
+          >
             Edit
           </a>
           <button class="btn btn-outline-danger" (click)="deleteGame(game._id)">
@@ -20,18 +23,21 @@
       </div>
     </div>
     <div class="card-body">
-      <p><strong>Publisher:</strong>{{ game.publisher.name }}</p>
-      <p><strong>Year:</strong>{{ game.year }}</p>
-      <p><strong>Price:</strong>{{ game.price | currency }}</p>
-      <p [hidden]="game.minPlayers == null ? true : false">
+      <p *ngIf="game.publisher">
+        <strong>Publisher:</strong>{{ game.publisher.name }}
+      </p>
+      <p *ngIf="game.year"><strong>Year:</strong>{{ game.year }}</p>
+
+      <p *ngIf="game.price">
+        <strong>Price:</strong>{{ game.price | currency }}
+      </p>
+      <p *ngIf="game.minPlayers">
         <strong>Minimum players:</strong>{{ game.minPlayers }}
       </p>
-      <p [hidden]="game.maxPlayers == null ? true : false">
+      <p *ngIf="game.maxPlayers">
         <strong>Maximum players:</strong>{{ game.maxPlayers }}
       </p>
-      <p [hidden]="game.age == null ? true : false">
-        <strong>Minimum age:</strong> {{ game.age }}
-      </p>
+      <p *ngIf="game.age"><strong>Minimum age:</strong> {{ game.age }}</p>
     </div>
   </div>
 </div>

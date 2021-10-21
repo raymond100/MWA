@@ -1,1 +1,67 @@
-<p>update-game works!</p>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h4>Update Game</h4>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="updateGame()" #updateForm="ngForm">
+        <div class="form-group row mb-3 justify-content-center">
+          <label for="title" class="col-sm-2 col-form-label">Title</label>
+          <div class="col-sm-6">
+            <input
+              type="text"
+              class="form-control"
+              id="title"
+              [(ngModel)]="model.title"
+              name="title"
+              #title="ngModel"
+              required
+            />
+            <div
+              [hidden]="title.valid || title.pristine"
+              class="alert alert-danger"
+            >
+              Title is required
+            </div>
+          </div>
+        </div>
+        <div class="form-group row mb-3 justify-content-center">
+          <label for="price" class="col-sm-2 col-form-label">Price</label>
+          <div class="col-sm-6">
+            <input
+              type="number"
+              step="0.01"
+              class="form-control"
+              id="price"
+              [(ngModel)]="model.price"
+              name="price"
+            />
+          </div>
+        </div>
+        <div class="form-group row mb-3 justify-content-center">
+          <label for="rate" class="col-sm-2 col-form-label">Rate</label>
+          <div class="col-sm-6">
+            <input
+              type="number"
+              min="1"
+              max="5"
+              class="form-control"
+              id="rate"
+              [(ngModel)]="model.rate"
+              name="rate"
+            />
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <button
+            type="submit"
+            class="btn btn-outline-success"
+            [disabled]="!updateForm.form.valid"
+          >
+            Edit Game
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

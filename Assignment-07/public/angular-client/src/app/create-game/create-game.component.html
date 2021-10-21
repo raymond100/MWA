@@ -14,7 +14,15 @@
               id="title"
               [(ngModel)]="model.title"
               name="title"
+              #title="ngModel"
+              required
             />
+            <div
+              [hidden]="title.valid || title.pristine"
+              class="alert alert-danger"
+            >
+              Title is required
+            </div>
           </div>
         </div>
         <div class="form-group row mb-3 justify-content-center">

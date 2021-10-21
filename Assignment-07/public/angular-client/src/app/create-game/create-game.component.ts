@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
+import { GamesService } from '../games.service';
 import { Game } from '../games-list/games-list.component';
 
 @Component({
@@ -8,7 +10,7 @@ import { Game } from '../games-list/games-list.component';
   styleUrls: ['./create-game.component.css'],
 })
 export class CreateGameComponent implements OnInit {
-  constructor() {}
+  constructor(private gamesService: GamesService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -17,6 +19,16 @@ export class CreateGameComponent implements OnInit {
   submitted = false;
 
   createGame() {
+    console.log('clicked', this.model);
+    this.gamesService
+      .addGame(this.model)
+      .then(() => {
+        this.router.navigate(['games']);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
     this.submitted = true;
   }
 }
