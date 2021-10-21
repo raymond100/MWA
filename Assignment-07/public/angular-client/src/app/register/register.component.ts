@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
 
   submitted = false;
+  isMatch = false;
 
   userRegister() {
     if (this.isMatchPassword()) {
@@ -31,7 +32,8 @@ export class RegisterComponent implements OnInit {
         });
       this.submitted = true;
     } else {
-      console.log('Not match');
+      this.isMatch = true;
+      console.log('Password not match');
     }
   }
 
