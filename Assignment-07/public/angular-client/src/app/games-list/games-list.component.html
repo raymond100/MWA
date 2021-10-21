@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="d-flex justify-content-end">
+    <a class="btn btn-outline-info mb-3" routerLink="/games/create"
+      >Add new game</a
+    >
+  </div>
+  <app-search></app-search>
+  <div class="row">
+    <div class="list-group mt-3" *ngFor="let game of games">
+      <a
+        routerLink="/games/{{ game._id }}"
+        class="list-group-item list-group-item-action"
+        >{{ game.title }}</a
+      >
+    </div>
+  </div>
+  <app-pagination></app-pagination>
+</div>
