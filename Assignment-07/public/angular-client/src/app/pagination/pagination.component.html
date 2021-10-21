@@ -3,7 +3,7 @@
     <li class="page-item">
       <a
         class="page-link"
-        ng-click="vm.previousPage(vm.currentPage)"
+        (click)="previousPage(currentPage)"
         aria-label="Previous"
       >
         <span aria-hidden="true">&laquo;</span>
@@ -11,20 +11,16 @@
       </a>
     </li>
     <li class="page-item">
-      <a class="page-link" ng-click="vm.setCurrentPage('1')">1</a>
+      <a class="page-link" (click)="setCurrentPage('1')">1</a>
     </li>
     <li class="page-item">
-      <a class="page-link" ng-click="vm.setCurrentPage('2')">2</a>
+      <a class="page-link" (click)="setCurrentPage('2')">2</a>
     </li>
     <li class="page-item">
-      <a class="page-link" ng-click="vm.setCurrentPage('3')">3</a>
+      <a class="page-link" (click)="setCurrentPage('3')">3</a>
     </li>
     <li class="page-item">
-      <a
-        class="page-link"
-        ng-click="vm.nextPage(vm.currentPage)"
-        aria-label="Next"
-      >
+      <a class="page-link" (click)="nextPage(currentPage)" aria-label="Next">
         <span aria-hidden="true">&raquo;</span>
         <span class="sr-only">Next</span>
       </a>

@@ -4,7 +4,22 @@
       >Add new game</a
     >
   </div>
-  <app-search></app-search>
+  <div class="input-wrapper">
+    <div class="input-group mb-3">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Search game"
+        aria-label="Search game"
+        aria-describedby="button-addon2"
+        name="search"
+        id="search"
+        [(ngModel)]="searchGame"
+        (ngModelChange)="change($event)"
+        autofocus
+      />
+    </div>
+  </div>
   <div class="row">
     <div class="list-group mt-3" *ngFor="let game of games">
       <a
@@ -14,5 +29,33 @@
       >
     </div>
   </div>
-  <app-pagination></app-pagination>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center my-5">
+      <li class="page-item">
+        <a
+          class="page-link"
+          (click)="previousPage(currentPage)"
+          aria-label="Previous"
+        >
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" (click)="setCurrentPage('1')">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" (click)="setCurrentPage('2')">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" (click)="setCurrentPage('3')">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" (click)="nextPage(currentPage)" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>

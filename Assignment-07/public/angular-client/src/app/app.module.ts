@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderNavComponent } from './header-nav/header-nav.component';
 import { CreateGameComponent } from './create-game/create-game.component';
 import { UpdateGameComponent } from './update-game/update-game.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { UpdateGameComponent } from './update-game/update-game.component';
     HeaderNavComponent,
     CreateGameComponent,
     UpdateGameComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
